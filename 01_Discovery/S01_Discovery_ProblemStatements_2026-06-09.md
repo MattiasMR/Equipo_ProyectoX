@@ -2,8 +2,8 @@
 
 ## Proyecto
 
-- Equipo: `[COMPLETAR POR EQUIPO]`
-- Proyecto nombre corto: TurnoEstudio
+- Equipo: ProyectoX
+- Proyecto nombre corto: ProyectoX
 - Semana: S01
 - Fecha: 2026-06-09
 - Regla: este documento trata sobre el problema, no sobre una solución.

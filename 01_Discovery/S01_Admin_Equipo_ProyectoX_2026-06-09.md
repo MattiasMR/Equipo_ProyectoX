@@ -2,16 +2,16 @@
 
 ## Identificación
 
-- Equipo: `[COMPLETAR POR EQUIPO]`
-- Integrantes: `[COMPLETAR POR EQUIPO]`
-- Proyecto nombre corto: TurnoEstudio
+- Equipo: ProyectoX
+- Integrantes: Mattias Morales, Ariel Van Kilsdonk, Francisco Polo, Carlos Orellana
+- Proyecto nombre corto: ProyectoX
 - Fecha de preparación: 2026-06-09
 - Semana: S01
-- Carpeta raíz: `Equipo_TurnoEstudio`
+- Carpeta raíz: `Equipo_ProyectoX`
 
 ## Definición inicial del proyecto
 
-TurnoEstudio explora el problema de estudiantes universitarios que trabajan con turnos variables y deben reorganizar estudio, evaluaciones y entregas cuando sus horarios laborales cambian con poca anticipación.
+ProyectoX explora el problema de estudiantes universitarios que trabajan con turnos variables y deben reorganizar estudio, evaluaciones y entregas cuando sus horarios laborales cambian con poca anticipación.
 
 En esta etapa no se propone ni defiende una solución. El objetivo es entender episodios reales, frecuencia, costos, alternativas actuales y fricciones del problema.
 
@@ -33,22 +33,22 @@ Este conocimiento solo sirve como punto de partida. La evidencia válida debe ve
 
 | Entregable requerido | Archivo | Estado |
 | --- | --- | --- |
-| Equipo formado y nombre corto del proyecto | Este archivo | Pendiente completar integrantes |
+| Equipo formado y nombre corto del proyecto | Este archivo | Listo |
 | 2-3 Problem Statements candidatos | `S01_Discovery_ProblemStatements_2026-06-09.md` | Listo |
 | Evaluación de problemas | `S01_Discovery_ProblemStatements_2026-06-09.md` | Listo |
 | Problem Statement principal elegido | `S01_Discovery_ProblemStatements_2026-06-09.md` | Listo |
-| Lista de 10 candidatos a entrevistar | `S01_Discovery_Candidatos_2026-06-09.md` | Lista sugerida, requiere reemplazar por personas reales |
-| 1 entrevista piloto registrada | `Entrevistas/S01_INT-01_Piloto_2026-06-09.md` | Guion listo, registro factual pendiente |
+| Lista de 10 candidatos a entrevistar | `S01_Discovery_Candidatos_2026-06-09.md` | 1 candidato real registrado; faltan 9 |
+| 1 entrevista piloto registrada | `Entrevistas/S01_INT-01_Piloto_2026-06-09.md` | Registro base listo; faltan citas textuales literales |
 
 ## Checklist antes de entregar
 
 - [ ] Equipo registrado en Canvas en `Grupos Proyecto`.
-- [ ] Integrantes reales completados en este archivo.
-- [ ] Nombre corto confirmado: TurnoEstudio.
+- [x] Integrantes reales completados en este archivo.
+- [x] Nombre corto confirmado: ProyectoX.
 - [ ] Al menos 10 candidatos reales registrados con canal plausible.
-- [ ] Al menos 1 entrevista piloto realizada.
-- [ ] Entrevista piloto marcada como `piloto`.
-- [ ] Registro post-entrevista completado con episodio real.
+- [x] Al menos 1 entrevista piloto realizada.
+- [x] Entrevista piloto marcada como `piloto`.
+- [x] Registro post-entrevista completado con episodio real.
 - [ ] Registro post-entrevista incluye alternativa actual, costo y al menos 2 citas textuales.
 - [ ] No se preguntó "¿usarías una app?" ni se vendió una solución.
 
@@ -59,4 +59,4 @@ Este conocimiento solo sirve como punto de partida. La evidencia válida debe ve
 3. Contactar al menos 3 candidatos para asegurar una entrevista.
 4. Realizar la entrevista piloto con alguien que calce con el segmento.
 5. Completar el registro post-entrevista inmediatamente después de hablar con la persona.
-6. Dejar toda la evidencia dentro de `Equipo_TurnoEstudio`.
+6. Dejar toda la evidencia dentro de `Equipo_ProyectoX`.

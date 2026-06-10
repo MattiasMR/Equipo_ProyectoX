@@ -2,8 +2,8 @@
 
 ## Proyecto
 
-- Equipo: `[COMPLETAR POR EQUIPO]`
-- Proyecto nombre corto: TurnoEstudio
+- Equipo: ProyectoX
+- Proyecto nombre corto: ProyectoX
 - Semana: S01
 - Fecha: 2026-06-09
 - Segmento buscado: estudiantes universitarios de pregrado que trabajan al menos 12 horas semanales y tienen turnos variables, cambios de turno u horas extra.
@@ -18,7 +18,7 @@ Desde semana 2, priorizar personas fuera del círculo cercano. Para la entrevist
 
 | ID | Nombre/Referencia | Rol / Segmento | Por qué calza | Cómo llegamos | Canal | Estado | Fecha tentativa | Notas |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| C-01 | `[COMPLETAR: estudiante que trabaje en retail]` | Estudiante pregrado + retail part-time | Turnos variables y semanas con evaluaciones | Contacto de segundo grado por compañero/a | WhatsApp | No contactado | `[COMPLETAR]` | Priorizar si tuvo cambio de turno reciente |
+| C-01 | Estudiante de Gastronomía en Culinary, 4to año | Estudiante pregrado + restobar nocturno | Trabaja 20 h/semana, a veces le extienden turno durante la jornada | Contacto cercano del equipo | WhatsApp | Entrevista piloto realizada | 2026-06-09 | Último episodio: prueba de economía afectada por extensión de turno |
 | C-02 | `[COMPLETAR: estudiante que trabaje en comida rápida]` | Estudiante pregrado + comida rápida | Alta probabilidad de turnos rotativos | Referido por conocido que trabaje en local | WhatsApp | No contactado | `[COMPLETAR]` | Preguntar por semanas con cierre/apertura |
 | C-03 | `[COMPLETAR: estudiante que trabaje en cafetería]` | Estudiante pregrado + cafetería | Turnos pueden cambiar por reemplazos | Contacto por cafetería cercana a campus | Presencial/WhatsApp | No contactado | `[COMPLETAR]` | Pedir permiso fuera del horario laboral |
 | C-04 | `[COMPLETAR: estudiante que trabaje en eventos]` | Estudiante pregrado + eventos/promotoría | Horarios concentrados y variables | LinkedIn, Instagram o referido | WhatsApp/LinkedIn | No contactado | `[COMPLETAR]` | Buen perfil para cambios de última hora |
@@ -43,7 +43,7 @@ Hola, estamos haciendo un trabajo de Customer Discovery para la universidad sobr
 
 ## Registro de avance
 
-- Contactados: 0/10
-- Agendados: 0/10
-- Entrevistas hechas: 0/10
+- Contactados: 1/10
+- Agendados: 1/10
+- Entrevistas hechas: 1/10
 - Piloto mínimo requerido para esta entrega: 1
