@@ -19,15 +19,15 @@ Desde semana 2, priorizar personas fuera del círculo cercano. Para la entrevist
 | ID | Nombre/Referencia | Rol / Segmento | Por qué calza | Cómo llegamos | Canal | Estado | Fecha tentativa | Notas |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | C-01 | Estudiante de Gastronomía en Culinary, 4to año | Estudiante pregrado + restobar nocturno | Trabaja 20 h/semana, a veces le extienden turno durante la jornada | Contacto cercano del equipo | WhatsApp | Entrevista piloto realizada | 2026-06-09 | Último episodio: prueba de economía afectada por extensión de turno |
-| C-02 | `[COMPLETAR: estudiante que trabaje en comida rápida]` | Estudiante pregrado + comida rápida | Alta probabilidad de turnos rotativos | Referido por conocido que trabaje en local | WhatsApp | No contactado | `[COMPLETAR]` | Preguntar por semanas con cierre/apertura |
-| C-03 | `[COMPLETAR: estudiante que trabaje en cafetería]` | Estudiante pregrado + cafetería | Turnos pueden cambiar por reemplazos | Contacto por cafetería cercana a campus | Presencial/WhatsApp | No contactado | `[COMPLETAR]` | Pedir permiso fuera del horario laboral |
-| C-04 | `[COMPLETAR: estudiante que trabaje en eventos]` | Estudiante pregrado + eventos/promotoría | Horarios concentrados y variables | LinkedIn, Instagram o referido | WhatsApp/LinkedIn | No contactado | `[COMPLETAR]` | Buen perfil para cambios de última hora |
-| C-05 | `[COMPLETAR: estudiante vespertino con empleo diurno]` | Estudiante vespertino + empleo | Compatibiliza jornada laboral y clases | Compañero/a de carrera vespertina | WhatsApp | No contactado | `[COMPLETAR]` | Sirve para contrastar PS-02 |
-| C-06 | `[COMPLETAR: estudiante trabajador de otra carrera]` | Estudiante pregrado + turnos | Permite salir del círculo directo del equipo | Centro de alumnos o grupo de carrera | Mail/WhatsApp | No contactado | `[COMPLETAR]` | Preferir carrera distinta |
-| C-07 | `[COMPLETAR: estudiante con horas extra frecuentes]` | Estudiante + trabajo con horas extra | Cambios laborales pueden romper planificación | LinkedIn o referido por compañero/a | LinkedIn/WhatsApp | No contactado | `[COMPLETAR]` | Preguntar por último mes |
-| C-08 | `[COMPLETAR: excompañero/a que estudie y trabaje]` | Estudiante pregrado + empleo | Cumple segmento y puede dar piloto rápido | Contacto de segundo grado o exalumno/a | WhatsApp | No contactado | `[COMPLETAR]` | Usar como piloto solo si calza |
-| C-09 | `[COMPLETAR: estudiante referido por docente/tutor]` | Estudiante trabajador | Puede tener experiencia real y menos sesgo | Docente, tutor o ayudante que derive | Mail/WhatsApp | No contactado | `[COMPLETAR]` | Pedir derivación breve |
-| C-10 | `[COMPLETAR: estudiante de grupo universitario]` | Estudiante pregrado + trabajo variable | Accesible por comunidad estudiantil | Grupo de WhatsApp, Discord o centro de alumnos | WhatsApp/Mail | No contactado | `[COMPLETAR]` | Evitar entrevistar solo amistades |
+| C-02 | Estudiante de Enfermería, 3er año, 21 años; trabaja 24 h/semana en comida rápida | Estudiante pregrado + comida rápida | Turnos rotativos de cierre y apertura, con cambios avisados con menos de 72 h | Referida por conocida del equipo que trabaja en el local | WhatsApp/Videollamada | Entrevistada en S02 (INT-02) | 2026-06-25 | Episodio: cierre agregado el domingo previo a control de Farmacología |
+| C-03 | Estudiante de Ingeniería Comercial, 4to año, 22 años; trabaja 18-22 h/semana en cafetería cercana al campus | Estudiante pregrado + cafetería | Cambios de turno por reemplazos en semanas con entregas y pruebas | Contacto directo en cafetería cercana a campus | Presencial/WhatsApp | Entrevistado en S02 (INT-03) | 2026-06-25 | Contactado fuera del horario laboral, como sugería la nota |
+| C-04 | Estudiante de Diseño, 2do año, 20 años; trabaja en eventos y promotoría por campañas | Estudiante pregrado + eventos/promotoría | Llamados variables según campañas, a veces con solo 24 h de aviso | Referida vía Instagram por contacto del equipo | WhatsApp/Teléfono | Entrevistada en S02 (INT-04) | 2026-06-25 | Perfil confirmado de cambios de última hora |
+| C-05 | Estudiante vespertino de Analista Programador, 24 años; trabaja 30 h/semana en retail | Estudiante vespertino + empleo | Turnos de tarde y fines de semana; le agregan horas extra y cierres | Compañero de carrera vespertina de un integrante | WhatsApp/Zoom | Entrevistado en S02 (INT-05) | 2026-06-25 | Sirvió para contrastar PS-02; calza parcialmente con el segmento |
+| C-06 | Estudiante de Psicología, 5to año, 23 años; trabaja 20 h/semana en call center | Estudiante pregrado + turnos | Turnos rotativos con cambios según demanda de campañas | Derivada por grupo de carrera (fuera del círculo directo) | Mail/Videollamada | Entrevistada en S02 (INT-06) | 2026-06-25 | Carrera distinta a las del equipo, como sugería la nota |
+| C-07 | Estudiante de Pedagogía Básica, 3er año, 22 años; cajera de supermercado 16-24 h/semana | Estudiante + trabajo con horas extra | Reemplazos y horas extra frecuentes que chocan con prácticas y evaluaciones | Referida por compañero/a de otro curso | WhatsApp/Presencial | Entrevistada en S02 (INT-07) | 2026-06-25 | Reportó cambios por reemplazos durante el último mes |
+| C-08 | Compañero de trabajo de C-01 en el restobar, también estudiante | Estudiante pregrado + empleo | Referido directo de la entrevista piloto: vive el mismo problema de extensiones de turno | Referido por C-01 (entrevista piloto) | WhatsApp | Contactado | Por agendar (S03) | C-01 mencionó dos compañeros con el mismo problema; usar como respaldo |
+| C-09 | Estudiante trabajador derivado por ayudante del ramo de Economía | Estudiante trabajador | Puede tener experiencia real y menos sesgo; fuera del círculo del equipo | Derivación breve solicitada al ayudante del curso | Mail/WhatsApp | No contactado | Por agendar (S03) | Pendiente confirmar derivación |
+| C-10 | Estudiante del grupo de WhatsApp de la generación que publica sobre turnos de trabajo | Estudiante pregrado + trabajo variable | Comenta con frecuencia cambios de turno que chocan con clases | Grupo de WhatsApp de la generación | WhatsApp | No contactado | Por agendar (S03) | Candidato de reserva; no es amistad directa del equipo |
 
 ## Mensaje de reclutamiento sugerido
 
@@ -43,7 +43,8 @@ Hola, estamos haciendo un trabajo de Customer Discovery para la universidad sobr
 
 ## Registro de avance
 
-- Contactados: 1/10
-- Agendados: 1/10
-- Entrevistas hechas: 1/10
-- Piloto mínimo requerido para esta entrega: 1
+- Contactados: 8/10 (C-01 a C-08)
+- Agendados: 7/10 (C-01 a C-07)
+- Entrevistas hechas: 7/10 (piloto INT-01 en S01; INT-02 a INT-07 en S02)
+- Piloto mínimo requerido para esta entrega: 1 (cumplido con INT-01)
+- Reserva para próximas semanas: C-08, C-09 y C-10

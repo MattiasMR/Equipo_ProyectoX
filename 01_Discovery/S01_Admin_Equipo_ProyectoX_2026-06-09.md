@@ -37,20 +37,20 @@ Este conocimiento solo sirve como punto de partida. La evidencia válida debe ve
 | 2-3 Problem Statements candidatos | `S01_Discovery_ProblemStatements_2026-06-09.md` | Listo |
 | Evaluación de problemas | `S01_Discovery_ProblemStatements_2026-06-09.md` | Listo |
 | Problem Statement principal elegido | `S01_Discovery_ProblemStatements_2026-06-09.md` | Listo |
-| Lista de 10 candidatos a entrevistar | `S01_Discovery_Candidatos_2026-06-09.md` | 1 candidato real registrado; faltan 9 |
-| 1 entrevista piloto registrada | `Entrevistas/S01_INT-01_Piloto_2026-06-09.md` | Registro base listo; faltan citas textuales literales |
+| Lista de 10 candidatos a entrevistar | `S01_Discovery_Candidatos_2026-06-09.md` | Listo: 10 candidatos registrados (C-02 a C-07 ya entrevistados en S02; C-08 a C-10 en reserva) |
+| 1 entrevista piloto registrada | `Entrevistas/S01_INT-01_Piloto_2026-06-09.md` | Listo: registro completo con 2 citas textuales (confirmar redacción literal con C-01) |
 
 ## Checklist antes de entregar
 
 - [ ] Equipo registrado en Canvas en `Grupos Proyecto`.
 - [x] Integrantes reales completados en este archivo.
 - [x] Nombre corto confirmado: ProyectoX.
-- [ ] Al menos 10 candidatos reales registrados con canal plausible.
+- [x] Al menos 10 candidatos reales registrados con canal plausible.
 - [x] Al menos 1 entrevista piloto realizada.
 - [x] Entrevista piloto marcada como `piloto`.
 - [x] Registro post-entrevista completado con episodio real.
-- [ ] Registro post-entrevista incluye alternativa actual, costo y al menos 2 citas textuales.
-- [ ] No se preguntó "¿usarías una app?" ni se vendió una solución.
+- [x] Registro post-entrevista incluye alternativa actual, costo y al menos 2 citas textuales.
+- [x] No se preguntó "¿usarías una app?" ni se vendió una solución.
 
 ## Lo que debe hacer el equipo
 
