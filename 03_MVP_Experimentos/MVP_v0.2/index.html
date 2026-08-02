@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ritmo v0.2 - Replanificador</title>
+  <style>
+    :root {
+      --bg: #111317;
+      --panel: #1b1f25;
+      --panel-2: #242a32;
+      --line: #3b424d;
+      --text: #f4f1ea;
+      --muted: #a8afb9;
+      --coral: #e36d5b;
+      --yellow: #e7b85b;
+      --green: #61a77b;
+      --blue: #65a6c8;
+      --danger: #ef8879;
+      --radius: 6px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    button, select, input { font: inherit; }
+    button { cursor: pointer; }
+    .app { min-height: 100vh; }
+    header {
+      border-bottom: 1px solid var(--line);
+      background: #15181d;
+    }
+    .header-inner, main { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+    .header-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      border: 2px solid var(--yellow);
+      display: grid;
+      place-items: center;
+      color: var(--yellow);
+      font-weight: 800;
+      border-radius: 50%;
+    }
+    h1 { font-size: 20px; margin: 0; }
+    .version { color: var(--muted); font-size: 12px; margin-top: 2px; }
+    .header-actions { display: flex; gap: 8px; }
+    main { padding: 28px 0 44px; }
+    .context {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: end;
+      margin-bottom: 22px;
+    }
+    .eyebrow { color: var(--yellow); font-size: 12px; font-weight: 800; text-transform: uppercase; }
+    h2 { font-size: 26px; line-height: 1.2; margin: 6px 0 8px; }
+    .context p { margin: 0; color: var(--muted); max-width: 760px; line-height: 1.5; }
+    .controls {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(130px, 1fr)) auto;
+      gap: 10px;
+      padding: 14px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      margin-bottom: 18px;
+    }
+    .field { display: flex; flex-direction: column; gap: 6px; }
+    label { color: var(--muted); font-size: 12px; font-weight: 700; }
+    input, select {
+      width: 100%;
+      min-height: 40px;
+      color: var(--text);
+      background: var(--panel-2);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      padding: 8px 10px;
+    }
+    input:focus, select:focus, button:focus-visible { outline: 2px solid var(--yellow); outline-offset: 2px; }
+    .btn {
+      min-height: 40px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      padding: 8px 13px;
+      color: var(--text);
+      background: var(--panel-2);
+      font-weight: 750;
+    }
+    .btn:hover { border-color: var(--muted); }
+    .btn-primary { background: var(--yellow); border-color: var(--yellow); color: #241b08; }
+    .btn-coral { background: var(--coral); border-color: var(--coral); color: #1d0b08; }
+    .btn-green { background: var(--green); border-color: var(--green); color: #08170e; }
+    .btn:disabled { opacity: .45; cursor: not-allowed; }
+    .control-action { align-self: end; white-space: nowrap; }
+    .board {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(160px, 1fr));
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .day {
+      min-height: 240px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .day.overloaded { border-color: var(--danger); }
+    .day-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 12px;
+      border-bottom: 1px solid var(--line);
+      background: #20252c;
+    }
+    .day-name { font-size: 13px; font-weight: 850; text-transform: uppercase; }
+    .load { color: var(--muted); font-size: 12px; }
+    .day.overloaded .load { color: var(--danger); font-weight: 800; }
+    .items { list-style: none; padding: 10px; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+    .item {
+      border-left: 3px solid var(--blue);
+      background: var(--panel-2);
+      padding: 9px;
+      border-radius: 3px;
+    }
+    .item.work { border-left-color: var(--coral); }
+    .item.study { border-left-color: var(--yellow); }
+    .item.personal { border-left-color: var(--green); }
+    .item-top { display: flex; justify-content: space-between; gap: 8px; }
+    .item-title { font-size: 13px; font-weight: 750; overflow-wrap: anywhere; }
+    .item-hours { color: var(--muted); font-size: 12px; white-space: nowrap; }
+    .item-meta { color: var(--muted); font-size: 11px; margin-top: 5px; }
+    .empty { color: var(--muted); font-size: 12px; padding: 8px 2px; }
+    .result {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+      padding: 16px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: center;
+    }
+    .result[data-state="warning"] { border-color: var(--danger); }
+    .result[data-state="ready"] { border-color: var(--green); }
+    .result-title { font-size: 15px; font-weight: 850; margin-bottom: 5px; }
+    .result-copy { color: var(--muted); font-size: 13px; line-height: 1.45; }
+    .suggestions { margin: 10px 0 0; padding-left: 18px; color: var(--text); font-size: 13px; }
+    .result-actions { display: flex; gap: 8px; }
+    .legend { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 12px; color: var(--muted); font-size: 12px; }
+    .legend span::before { content: ""; display: inline-block; width: 8px; height: 8px; margin-right: 6px; border-radius: 50%; }
+    .legend .study-key::before { background: var(--yellow); }
+    .legend .work-key::before { background: var(--coral); }
+    .legend .personal-key::before { background: var(--green); }
+    .toast {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      padding: 11px 14px;
+      border: 1px solid var(--line);
+      background: #232a32;
+      border-radius: 4px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.28);
+      font-size: 13px;
+    }
+    .hidden { display: none; }
+    @media (max-width: 900px) {
+      .board { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .control-action { width: 100%; }
+    }
+    @media (max-width: 560px) {
+      .header-inner, main { width: min(100% - 20px, 1180px); }
+      .context, .result { grid-template-columns: 1fr; }
+      .controls, .board { grid-template-columns: 1fr; }
+      .header-inner { align-items: flex-start; padding: 14px 0; }
+      .header-actions { flex-direction: column; }
+      .result-actions { flex-wrap: wrap; }
+      h2 { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="header-inner">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">R</div>
+          <div><h1>Ritmo</h1><div class="version">MVP v0.2 · Replanificacion semanal</div></div>
+        </div>
+        <div class="header-actions">
+          <button class="btn" id="undoBtn" title="Deshacer ultimo cambio" disabled>Deshacer</button>
+          <button class="btn" id="resetBtn" title="Restablecer escenario">Restablecer</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="context" aria-labelledby="scenarioTitle">
+        <div>
+          <div class="eyebrow">Escenario de prueba</div>
+          <h2 id="scenarioTitle">Tu turno se extendio. Repara la semana.</h2>
+          <p>La prueba de Economia vence el miercoles. Registra la extension laboral del martes y confirma una propuesta que mantenga la preparacion antes del plazo.</p>
+        </div>
+        <button class="btn btn-coral" id="scenarioBtn" data-testid="scenario-button">Aplicar extension de 3 h</button>
+      </section>
+
+      <form class="controls" id="taskForm">
+        <div class="field">
+          <label for="taskTitle">Nueva actividad</label>
+          <input id="taskTitle" name="taskTitle" placeholder="Ej: repasar capitulo 4" required>
+        </div>
+        <div class="field">
+          <label for="taskType">Categoria</label>
+          <select id="taskType" name="taskType">
+            <option value="study">Estudio</option>
+            <option value="work">Trabajo</option>
+            <option value="personal">Personal</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="taskDay">Dia</label>
+          <select id="taskDay" name="taskDay"></select>
+        </div>
+        <div class="field">
+          <label for="taskHours">Duracion</label>
+          <input id="taskHours" name="taskHours" type="number" min="0.5" max="8" step="0.5" value="1">
+        </div>
+        <button class="btn btn-primary control-action" type="submit">Agregar</button>
+      </form>
+
+      <section class="board" id="board" aria-label="Plan semanal" data-testid="board"></section>
+
+      <section class="result" id="resultPanel" data-state="neutral" aria-live="polite">
+        <div>
+          <div class="result-title" id="resultTitle">Semana base cargada</div>
+          <div class="result-copy" id="resultCopy">Registra la extension de turno para detectar el conflicto.</div>
+          <ul class="suggestions hidden" id="suggestions"></ul>
+        </div>
+        <div class="result-actions">
+          <button class="btn" id="suggestBtn" data-testid="suggest-button" disabled>Generar propuesta</button>
+          <button class="btn btn-green" id="applyBtn" data-testid="apply-button" disabled>Aplicar propuesta</button>
+        </div>
+      </section>
+
+      <div class="legend" aria-label="Leyenda">
+        <span class="study-key">Estudio</span>
+        <span class="work-key">Trabajo</span>
+        <span class="personal-key">Personal</span>
+        <span>Capacidad diaria: 8 h</span>
+      </div>
+    </main>
+    <div class="toast hidden" id="toast"></div>
+  </div>
+
+  <script src="logic.js"></script>
+  <script>
+    const DAYS = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes"];
+    const CAPACITY = 8;
+    const STORAGE_KEY = "ritmo-v02-state";
+
+    let state = loadState();
+    let history = [];
+    let proposal = [];
+
+    const board = document.getElementById("board");
+    const resultPanel = document.getElementById("resultPanel");
+    const resultTitle = document.getElementById("resultTitle");
+    const resultCopy = document.getElementById("resultCopy");
+    const suggestions = document.getElementById("suggestions");
+    const suggestBtn = document.getElementById("suggestBtn");
+    const applyBtn = document.getElementById("applyBtn");
+    const scenarioBtn = document.getElementById("scenarioBtn");
+    const undoBtn = document.getElementById("undoBtn");
+
+    function freshState() {
+      return RitmoLogic.freshState();
+    }
+
+    function loadState() {
+      try {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        return stored ? JSON.parse(stored) : freshState();
+      } catch (_) {
+        return freshState();
+      }
+    }
+
+    function saveState() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      render();
+    }
+
+    function snapshot() {
+      history.push(JSON.stringify(state));
+      if (history.length > 10) history.shift();
+      undoBtn.disabled = false;
+    }
+
+    function totalHours(day) {
+      return RitmoLogic.totalHours(state.tasks, day);
+    }
+
+    function render() {
+      board.innerHTML = DAYS.map((name, day) => {
+        const tasks = state.tasks.filter(t => t.day === day);
+        const hours = totalHours(day);
+        const overloaded = hours > CAPACITY;
+        const items = tasks.length ? tasks.map(task => `
+          <li class="item ${task.type}" data-task-id="${task.id}">
+            <div class="item-top"><span class="item-title">${escapeHtml(task.title)}</span><span class="item-hours">${task.hours} h</span></div>
+            <div class="item-meta">${task.type === "study" ? `Fecha limite: ${DAYS[task.deadline]}` : labelType(task.type)}</div>
+          </li>`).join("") : '<li class="empty">Sin actividades</li>';
+        return `<article class="day ${overloaded ? "overloaded" : ""}" data-day="${day}">
+          <div class="day-head"><span class="day-name">${name}</span><span class="load">${hours}/${CAPACITY} h</span></div>
+          <ul class="items">${items}</ul>
+        </article>`;
+      }).join("");
+      scenarioBtn.disabled = state.scenarioApplied;
+      scenarioBtn.textContent = state.scenarioApplied ? "Extension registrada" : "Aplicar extension de 3 h";
+      suggestBtn.disabled = !state.scenarioApplied;
+      if (!state.scenarioApplied) setResult("neutral", "Semana base cargada", "Registra la extension de turno para detectar el conflicto.");
+    }
+
+    function setResult(mode, title, copy) {
+      resultPanel.dataset.state = mode;
+      resultTitle.textContent = title;
+      resultCopy.textContent = copy;
+      if (mode !== "proposal") {
+        suggestions.classList.add("hidden");
+        suggestions.innerHTML = "";
+      }
+    }
+
+    function applyScenario() {
+      if (state.scenarioApplied) return;
+      snapshot();
+      state = RitmoLogic.addScenarioExtension(state);
+      proposal = [];
+      saveState();
+      setResult("warning", "Conflicto detectado el martes", `La carga subio a ${totalHours(1)} h. Genera una propuesta para recuperar viabilidad.`);
+      showToast("Extension laboral registrada");
+    }
+
+    function generateProposal() {
+      proposal = RitmoLogic.buildProposal(state.tasks, CAPACITY, DAYS.length);
+
+      if (!proposal.length) {
+        setResult("warning", "No hay una propuesta viable", "La capacidad disponible antes de los plazos no alcanza. Reduce duracion o renegocia una tarea.");
+        applyBtn.disabled = true;
+        return;
+      }
+
+      resultPanel.dataset.state = "proposal";
+      resultTitle.textContent = "Propuesta lista para revisar";
+      resultCopy.textContent = "Ritmo priorizo el deadline y busco el dia con menor carga disponible.";
+      suggestions.innerHTML = proposal.map(move => {
+        const task = state.tasks.find(t => t.id === move.id);
+        return `<li>Mover <strong>${escapeHtml(task.title)}</strong> de ${DAYS[move.from]} a ${DAYS[move.to]}.</li>`;
+      }).join("");
+      suggestions.classList.remove("hidden");
+      applyBtn.disabled = false;
+    }
+
+    function applyProposal() {
+      if (!proposal.length) return;
+      snapshot();
+      state.tasks = RitmoLogic.applyMoves(state.tasks, proposal);
+      proposal = [];
+      applyBtn.disabled = true;
+      saveState();
+      const viable = RitmoLogic.isViable(state.tasks, CAPACITY, "s1");
+      setResult(viable ? "ready" : "warning", viable ? "Plan viable confirmado" : "Revisa el plan", viable ? "La prueba de Economia mantiene un bloque antes del plazo y no quedan dias sobrecargados." : "Quedan conflictos que requieren ajuste manual.");
+      showToast(viable ? "Replanificacion aplicada" : "Propuesta aplicada con alertas");
+    }
+
+    function resetScenario() {
+      snapshot();
+      state = freshState();
+      proposal = [];
+      applyBtn.disabled = true;
+      saveState();
+      showToast("Escenario restablecido");
+    }
+
+    function undo() {
+      const previous = history.pop();
+      if (!previous) return;
+      state = JSON.parse(previous);
+      proposal = [];
+      applyBtn.disabled = true;
+      undoBtn.disabled = history.length === 0;
+      saveState();
+      showToast("Ultimo cambio deshecho");
+    }
+
+    function addTask(event) {
+      event.preventDefault();
+      const form = new FormData(event.currentTarget);
+      const title = String(form.get("taskTitle") || "").trim();
+      if (!title) return;
+      snapshot();
+      const day = Number(form.get("taskDay"));
+      state.tasks.push({
+        id: `custom-${Date.now()}`,
+        title,
+        type: String(form.get("taskType")),
+        day,
+        hours: Number(form.get("taskHours")) || 1,
+        deadline: day,
+        priority: 1
+      });
+      event.currentTarget.reset();
+      document.getElementById("taskHours").value = "1";
+      saveState();
+    }
+
+    function labelType(type) {
+      return ({ work: "Trabajo", study: "Estudio", personal: "Personal" })[type] || "Actividad";
+    }
+
+    function escapeHtml(value) {
+      return value.replace(/[&<>'"]/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" })[char]);
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      toast.textContent = message;
+      toast.classList.remove("hidden");
+      window.setTimeout(() => toast.classList.add("hidden"), 1800);
+    }
+
+    document.getElementById("taskDay").innerHTML = DAYS.map((day, index) => `<option value="${index}">${day}</option>`).join("");
+    document.getElementById("taskForm").addEventListener("submit", addTask);
+    scenarioBtn.addEventListener("click", applyScenario);
+    suggestBtn.addEventListener("click", generateProposal);
+    applyBtn.addEventListener("click", applyProposal);
+    document.getElementById("resetBtn").addEventListener("click", resetScenario);
+    undoBtn.addEventListener("click", undo);
+    render();
+  </script>
+</body>
+</html>

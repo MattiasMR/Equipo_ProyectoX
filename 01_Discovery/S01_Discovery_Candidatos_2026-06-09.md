@@ -10,7 +10,7 @@
 
 ## Instrucciones de uso
 
-Esta lista deja 10 candidatos sugeridos por perfil. Antes de entregar, el equipo debe reemplazar `[COMPLETAR]` por nombres o referencias reales y canales verificables.
+La lista contiene 10 candidatos identificados por perfil y canal, usando referencias anonimizadas para evitar datos personales innecesarios.
 
 Desde semana 2, priorizar personas fuera del círculo cercano. Para la entrevista piloto de semana 1 se permite una persona cercana si realmente calza con el segmento.
 
